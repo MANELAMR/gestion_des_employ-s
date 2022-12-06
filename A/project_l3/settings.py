@@ -81,9 +81,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'project_l3',
         'USER': 'postgres',
-        'PASSWORD': 'manel25',
+        'PASSWORD': 'manel',
         'HOST': 'localhost',
-        'PORT' : '2505',
+        'PORT' : '252000',
     }
     
 }
@@ -141,7 +141,7 @@ LOGIN_REDIRECT_URL = 'home1'
 ##khalatna fal email 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'gestiondesemployee@gmail.com'
-EMAIL_HOST_PASSWORD = 'isil2021'
+EMAIL_HOST_USER = ' '
+EMAIL_HOST_PASSWORD = ' '
 EMAIL_USE_TLS = True
 
