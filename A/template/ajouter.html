@@ -1,0 +1,345 @@
+{% load static%}
+   <html lang="en">
+    <head>
+       <title>Ajouter un employe </title>
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-sxale=1 ">
+        <link rel="stylesheet " href="{%static 'css/csshome.css'%}" type="text/css">
+        <link rel="stylesheet " href="{%static 'css/ajouter.css'%}" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-sxale=1 "> 
+
+
+        
+         
+         
+        
+    
+    </head>
+    <body style="background-color: #f1f5f8;">
+            <div class="sidebar">
+                     <div class="sidebar-brand">
+                           
+                       </div>
+                       <div class="sidebar-main"> 
+                        <div class="sidebar-user"> 
+                           <div style="margin-top: -15%; margin-bottom: 15%;"  ><h1> Gestion des Employés</h1> </div>
+                            <img src="..\static\image\profile.png"  alt="" > <!-- a modifier-->
+                            <div class="sidebar-user"> 
+                                <h3 > {{user.username}} </h3>  <!-- a modifier-->
+                            </div>
+                        </div>
+                        <div class="sidebar-menu"> 
+                            <div class="menu-head"> 
+                                <span > fonctinalite </span> <!-- a modifier-->
+                              
+                            </div>
+                             <ul>
+                                 <li> <a href="{% url 'ajouter'%}"> 
+                                          <i class="fas fa-plus"> Ajouter un employer  </i>
+                                     </a> 
+                                 </li>
+                                 <li> <a href="{% url 'consult'%}">
+                                    <span class="fas fa-address-book"> Consulter les  employes  </span>
+                                     
+                                    </a> </li>
+                                    <li> <a href="{% url 'modetsupp'%}">
+                                        <span class="fas fa-user-edit"> Modifier ou supprimer  </span><!-- a modifier-->
+                                              </a>
+                                     </li>
+                                     <li> <a href="{% url 'attestation'%}">
+                                        <span class="far fa-file-alt"> Attestation du travail  </span><!-- a modifier-->
+                                              </a>
+                                     </li>
+                                     <li> <a href="{% url 'email'%}">
+                                       <span class="fas fa-envelope-open-text"> Email </span><!-- a modifier-->
+                                             </a>
+                                    </li>
+
+                             </ul>
+                           
+
+                             <div class="menu-head"> 
+                                <span >Menu </span> <!-- a modifier-->
+                              
+                            </div>
+                             <ul>
+                                 <li> <a href="{% url 'home1'%}"> 
+                                          <span class="fas fa-home"> Home </span> <!-- a modifier-->
+                                     </a> 
+                                 </li>
+
+                                 <li> <a href="{% url 'supprimer'%}">
+                                    <span class="las la-tools"> Configuration  </span><!-- a modifier-->
+                                          </a>
+                                 </li>
+
+                                 
+
+                             </ul>
+                        </div>
+                       </div>
+                       </div>
+                       <div class="main-content"> </div>
+                       <header class="header"> 
+                        <div class="menu-toggle">
+                          <label for=""> 
+                              
+                          </label>    
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'index'%}"><span style="color: black;">déconnecter</span> </a><i class="fas fa-sign-out-alt"></i></button>
+                          </div>
+
+                       </header>
+                           <main>
+                               <div class="page-header">
+                                 <div style="margin-top: 20px;"> <!-- hadi hiya li nakhadmo fiha -->
+                                     <h1 style="color: black; margin-bottom: 10px;" class="card-flex">   Ajouter un employe  </h1><!-- a modifier-->
+                                     <small style="color: black;" >remplire cette fomulaire pour ajouter un employe </small><!-- a modifier-->
+                                 </div> 
+                                 
+                                 
+                                 <div class="header-actions" style="margin-top: 1px;" >
+                                     
+                                     
+                                 </div>
+
+                              </div>
+                              {% if form.errors %}
+                              <div class="alert alert-danger">
+                                 {{form.errors}}
+                                
+                              </div>
+                              {% endif %}
+                              <div class="cards">
+                                <div class="card-flex">
+                                    <div class="card-info">
+                                        <div class="card-head">
+
+                                            <section class="get-in-touch">
+                                               
+                                                <form class="contact-form row" method="POST">
+                                                {% csrf_token%}
+                                                   <div class="form-field col-lg-6">
+               
+                                                      <label class="label" for="Nom" style="margin-bottom: -10px;">nom :</label>
+                                                   </div>
+                                                   <div class="form-field col-lg-6 ">
+                                                   
+                                                    <label class="label" for="Prenom" style="margin-bottom: -10px;">Prenom :</label>
+                                                 </div>
+                                       
+                                       
+                                                  <div class="form-field col-lg-6">
+                                                     <input name="Nom" {% if form.Nom.value %} value="{{form.Nom.value}}" {% endif %} class="input-text js-input" type="text" placeholder="Le nom" required style="margin-top: -40px;">
+                                                                                                       </div>
+                                                  <div class="form-field col-lg-6 ">
+                                                   <input name="Prenom" {% if form.Prenom.value %} value="{{form.Prenom.value}}" {% endif %} class="input-text js-input" type="text"  placeholder="Le prenom " style="margin-top: -40px;" required>
+                                                   
+                                                </div>
+                                                 <div class="form-field col-lg-6 ">
+                                                    
+                                                    <label class="label" for="dateN">date de naissance :</label>
+                                                 </div>
+                                                 <div class="form-field col-lg-6 ">
+                                                    
+                                                    <label class="label" for="email">email : </label>
+                                                 </div>
+
+
+
+                                                   <div class="form-field col-lg-6 " style="margin-top: 0px;">
+                                                    <input name="dateN" {% if form.dateN.value %} value="{{form.dateN.value}}" {% endif %} class="input-text js-input" type="date" required>
+                                                    
+                                                 </div>
+                                                   <div class="form-field col-lg-6 "  style="margin-top: 0px;">
+                                                      <input name="email" {% if form.email.value %} value="{{form.email.value}}" {% endif %} class="input-text js-input" type="email" required>
+                                                     
+                                                   </div>
+                                                   <div class="form-field col-lg-6">
+               
+                                                      <label class="label" for="Nommarital" style="margin-bottom: -10px;">nom maritale :</label>
+                                                   </div>
+                                                   <div class="form-field col-lg-6 ">
+                                                   
+                                                    <label class="label" for="phone_number " style="margin-bottom: -10px;">Num de telephone :</label>
+                                                 </div>
+                                       
+                                       
+                                                  <div class="form-field col-lg-6">
+                                                     <input name="Nommarital" {% if form.Nommarital.value %} value="{{form.Nommarital.value}}" {% endif %} class="input-text js-input" type="text" placeholder="nom maritale" required style="margin-top: -40px;">
+                                                     
+                                                  </div>
+                                                  <div class="form-field col-lg-6 ">
+                                                   <input name="num_telephon" {% if form.num_telephon.value %} value="{{form.num_telephon.value}}" {% endif %} class="input-text js-input" type="text"  placeholder=" Num de telephone " style="margin-top: -40px;" required>
+                                                   
+                                                </div>
+                                                 
+
+
+                                                <div class="form-field col-lg-6">
+               
+                                                   <label class="label" for="nbr_enfants" style="margin-bottom: -10px;">nombre d'enfants :</label>
+                                                </div>
+                                                <div class="form-field col-lg-6 ">
+                                                
+                                                 <label class="label" for="nbr_femmes " style="margin-bottom: -10px;">nombre de femmes :</label>
+                                              </div>
+                                    
+                                    
+                                               <div class="form-field col-lg-6">
+                                                  <input name="nbr_enfants" {% if form.nbr_enfants.value %} value="{{form.nbr_enfants.value}}" {% endif %} class="input-text js-input" type="number" placeholder="nombre d'enfants" required style="margin-top: -40px;">
+                                                  
+                                               </div>
+                                               <div class="form-field col-lg-6 ">
+                                                <input name="nbr_femmes" {% if form.nbr_femmes.value %} value="{{form.nbr_femmes.value}}" {% endif %} class="input-text js-input" type="number"  placeholder=" nombre de femmes " style="margin-top: -40px;" required>
+                                                
+                                             </div>
+
+
+
+
+
+                                             <div class="form-field col-lg-6">
+               
+                                                <label class="label" for="num_inférentiek_inf" style="margin-bottom: -10px;">numero minimum d'inférence :</label>
+                                             </div>
+                                             <div class="form-field col-lg-6 ">
+                                             
+                                              <label class="label" for="rang " style="margin-bottom: -10px;">Rang :</label>
+                                           </div>
+                                 
+                                 
+                                            <div class="form-field col-lg-6">
+                                               <input name="num_inférentiek_inf"  {% if form.num_inférentiek_inf.value %} value="{{form.num_inférentiek_inf.value}}" {% endif %} class="input-text js-input" type="text" placeholder="nombre minimum d'inférence" required style="margin-top: -40px;">
+                                               
+                                            </div>
+                                            <div class="form-field col-lg-6" style="margin-top: -5px;">
+                                             
+                                             <select name="rang" id="rang"  {% if form.rang.value %} value="{{form.rang.value}}" {% endif %} class="form-control" >
+                                                 <option value="0">0</option>
+                                                 <option value="1">1</option>
+                                                 <option value="2">2</option>
+                                                 <option value="3">3</option>
+                                                 <option value="4">4</option>
+                                                 <option value="5">5</option>
+                                                 <option value="6">6</option>
+                                                 <option value="7">7</option>
+                                                 <option value="8">8</option>
+                                                 <option value="9">9</option>
+                                                 <option value="10">10</option>
+                                                 <option value="11">11</option>
+                                                 <option value="12">12</option>
+                                               </select>
+                                        </div>
+
+                                             
+                                                 <div class="form-field col-lg-6 ">
+                                                    
+                                                    <label class="label" for="date"> Date de recrutement:</label>
+                                                 </div>
+                                                 <div class="form-field col-lg-6 ">
+                                                    
+                                                    <label class="label" for="date">Sex : </label>
+                                                 </div>
+                                                 
+                                                 
+                                                 
+                                                 <div class="form-field col-lg-6 " style="margin-top: 0px;">
+                                                    <input name="Date_de_recrutement" {% if form.Date_de_recrutement.value %} value="{{form.Date_de_recrutement.value}}" {% endif %} class="input-text js-input" type="date" required>
+                                                    
+                                                 </div>
+                                                    <div class="form-field col-lg-3 " style="margin-top:0px;">
+                                                        <label class="label" for="phone" style="color: black;">Femme</label>
+                                                        <br>
+                                                        <input name="sex" {% if form.sex.value %} value="{{form.sex.value}}" {% endif %} value="F" type="radio" required>
+                                                       
+                                                      
+                                                      
+                                                   </div>
+                                                   <div class="form-field col-lg-3 " style="margin-top: 2px;">
+                                                    
+                                                    <label class="label" for="phone" style="color: black;">Homme </label>
+                                                   <br>
+                                                    <input name="sex"  {% if form.sex.value %} value="{{form.sex.value}}" {% endif %} value="H" type="radio" required>
+                                                  
+                                                  
+                                               </div>
+                                               <div class="form-field col-lg-12">
+                                                <label class="label" for="phone">Poste </label>
+                                                <select name="postes"  {% if form.postes.value %} value="{{form.postes.value}}" {% endif %} id="postes" class="form-control">
+                                                    <option value="ingénieure"></option>
+                                                    <option value="technicien_-supérieure">technicien supérieure</option>
+                                                    <option value="comptable">comptable</option>
+                                                    <option value="administrateur">administrateur </option>
+                                                    <option value="secrrtaire">secrrtaire</option>
+                                                    <option value="responsable de traitement">responsable de traitement</option>
+                                                    <option value="agent de securite">agent de securite</option>
+                                                    <option value="responsable de laboratoire">responsable de laboratoire</option>
+                                                    <option value="responsable de traitement bancaire">responsable de traitement bancaire</option>
+                                                    <option value="enseignant">enseignant</option>
+                                                    <option value="bibliothécaire">bibliothécaire</option>
+                                                    <option value="informaticien">informaticien</option>
+                                                    
+
+                                                    
+
+                                                   </select>
+                                           </div>
+                                           <div class="form-field col-lg-6 ">
+                                                    
+                                             <label class="label" for="situation_familiale"> situation familiale:</label>
+                                          </div>
+                                          <div class="form-field col-lg-6 ">
+                                                    
+                                             <label class="label" for="categorie"> categorie:</label>
+                                          </div>
+                                          <div class="form-field col-lg-6" style="margin-top: -5px;">
+                                             
+                                             <select name="situation_familiale" id="situation familiale" class="form-control">
+                                                 <option value=""></option>
+                                                 <option value="mariee">mariee</option>
+                                                 <option value="célibataire">célibataire</option>
+                                                 <option value="divorcé">divorcé</option>
+                                               </select>
+                                        </div>
+
+                                          
+                                          <div class="form-field col-lg-6" style="margin-top: 0px;">
+                                             <input name="categorie" class="input-text js-input" type="text" required>
+                                             
+                                          </div>
+                                                   <div class="form-field col-lg-12">
+                                                      <input class="submit-btn" type="submit" value="Submit" >
+                                                   </div>
+                                                </form>
+                                             </section>
+                                            
+                                            
+                                        
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                              </div>
+                           </main>
+
+   
+         
+                           <script>
+                              function myFunction() {
+                                alert("Employee bien enregistrer");
+                              }
+                              </script>  
+    
+     
+          
+            
+    </body>
+    </html>
+

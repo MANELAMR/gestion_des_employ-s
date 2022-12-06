@@ -1,0 +1,62 @@
+{% load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/index22.css'%}" type="text/css"></head>
+    <link rel="stylesheet" href="{%static 'css/header.css'%}" type="text/css"></head>
+
+     
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>LogIN</title>
+</head>
+<body>
+<div class="header">
+   
+          <img class="header__logo" src="..\static\image\USDB.png" alt="USDB">
+        </div>  
+</div>
+
+
+  <div class="parent__box">
+    <div class="login__box">
+       <div class="login__info">
+              
+              <h1> S'identifier</h1>
+              
+        </div>
+       <form action="" method="POST">
+         {%csrf_token%}
+            <div class="text__box">
+               <label style="color:white ;margin-left:5px" > email</label>
+               <input type="email"placeholder="myadresse@platform.com" style="margin-left:70px ;font-size: 20px;" name='email'>
+           </div>
+      
+            <div class="text__box">
+                <lable style="color:white"> mot de passe</lable>  
+                    <input type="password"placeholder="******"style="margin-left:10px ; background-color:transparent" name='pas' >
+           </div>
+
+             <div class="form__registre">
+               <button  type="submit" class="btn btn-success" style="margin-top:10px;margin-left:15%;width:250px;background-color:#393e46;border:1px solid white">Success</button>
+             </div>
+             <br>
+             <div class="sing__up"> <p> crée un compt<span  class ="sig__sign"style="color:darkblue;"><a href="{% url 'signup'%}"> s'inscret </span></p>
+                                    <p style="color: darkblue;"> <a href="#"  >mot de passe oublier ? </p></a>
+                                    
+                          </div>
+      </form>
+</div>
+</div>
+
+</body>
+</html>

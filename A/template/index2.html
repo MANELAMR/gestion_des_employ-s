@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>مستخرج من جدول الترقية </title>
+	<!-- Latest compiled and minified bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style>
+		body{
+			background-color: #0a050f;
+		}
+
+		.card{
+			background-color: #fff;
+			padding: 50px 50px 50px 50px;
+			margin:50px;
+		}
+	</style>
+</head>
+
+<body  >
+	<div class="container">
+		<div class="row">
+			<div class="col-md"></div>
+
+			<div class="col-md">
+				<div class="card card-body">
+					 <div class="text-center"> 
+					<h3>Afficher ou télécharger directement au format PDF</h3>
+					
+					<a class="btn btn-info" href="{% url 'ViewPDF' %}" target="_blank">voir </a>
+					<a class="btn btn-info"  href="{% url 'pdf_download' %}">télécharger </a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md"></div>
+		</div>
+	</div>
+
+
+</body>
+</html>

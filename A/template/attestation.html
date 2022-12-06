@@ -1,0 +1,227 @@
+{% load static%}
+   <html lang="en">
+    <head>
+       <title>les attestations </title>
+       <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>      
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1 , maximum-sxale=1 ">
+        <link rel="stylesheet " href="{%static 'css/csshome.css'%}" type="text/css">
+
+        
+         
+         
+        
+    
+    </head>
+    <body style="background-color: #f1f5f8;">
+            <div class="sidebar">
+                     <div class="sidebar-brand">
+                           
+                       </div>
+                       <div class="sidebar-main"> 
+                        <div class="sidebar-user"> 
+                            <div style="margin-top: -15%; margin-bottom: 15%;"  ><h1> Gestion des Employés</h1> </div>
+                            <img src="..\static\image\profile.png"  alt="" > <!-- a modifier-->
+                            <div class="sidebar-user"> 
+                                <h3 >{{user.username}}</h3>  <!-- a modifier-->
+                            </div>
+                        </div>
+                        <div class="sidebar-menu"> 
+                            <div class="menu-head"> 
+                                <span > fonctinalite </span> <!-- a modifier-->
+                              
+                            </div>
+                             <ul>
+                                 <li> <a href="{% url 'ajouter'%}"> 
+                                          <span class="fas fa-plus"> Ajouter un employer  </span>
+                                     </a> 
+                                 </li>
+
+                                 
+
+                                 
+                                 <li> <a href="{% url 'consult'%}">
+                                    <span class="fas fa-address-book"> Consulter les employes  </span>
+                                     
+                                    </a> </li>
+                                    <li> <a href="{% url 'modetsupp'%}">
+                                        <span class="fas fa-user-edit"> Modifier ou supprimer  </span><!-- a modifier-->
+                                              </a>
+                                     </li>
+                                     <li> <a href="{% url 'attestation'%}">
+                                        <span class="far fa-file-alt"> Attestation du travail  </span><!-- a modifier-->
+                                              </a>
+                                     </li>
+                                     <li> <a href="{% url 'email'%}">
+                                        <span class="fas fa-envelope-open-text"> Email </span><!-- a modifier-->
+                                              </a>
+                                     </li>
+                             </ul>
+                           
+
+                             <div class="menu-head"> 
+                                <span > Menu </span> <!-- a modifier-->
+                              
+                            </div>
+                             <ul>
+                                 <li> <a href="{% url 'home1'%}"> 
+                                          <span class="fas fa-home"> Home   </span> <!-- a modifier-->
+                                     </a> 
+                                 </li>
+
+                                 <li> <a href="{% url 'supprimer'%}">
+                                    <span class="las la-tools"> Configuration  </span><!-- a modifier-->
+                                          </a>
+                                 </li>
+                                 
+
+                                 
+
+                             </ul>
+                        </div>
+                       </div>
+                       </div>
+                       <div class="main-content"> </div>
+                       <header class="header"> 
+                        <div class="menu-toggle">
+                          
+                        </div>
+                        
+                        <!-- a modifier-->
+                    
+                        <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'index'%}"><span style="color: black;">déconnecter</span> </a><i class="fas fa-sign-out-alt"></i></button>
+                          </div>
+
+                       </header>
+                           <main>
+                               <div class="page-header">
+                                  
+
+                                 <div class="header-actions">
+                                     
+                                    
+                                 </div>
+
+                              </div> 
+                              <div class="cards">
+                                <div class="card-flex" style="margin-top: 3%; margin-bottom: -2%;"><h2 > <i class="la la-list-ul"  > Liste des employes  </i></h2>
+                                    <div class="card-info">
+                                        
+                                        <div class="card-head">
+                                            <div style="margin-top: -5%;"> <!-- hadi hiya li nakhadmo fiha -->
+                                               <!-- a modifier-->
+                                                
+                                               
+                                                <table class="table table-hover table-condensed table-responsive " style="margin-top: 10%;"  >
+                                                    <tr>
+                                                        <tH class="data-fixed-columns">nom </th>
+                                                        <th class="data-fixed-columns">prenom </th>
+                                                        
+
+                                                        
+                                                        
+  
+                                                    </tr>
+                                                    {%for i in post%}
+                                                   
+                                                    <tr>
+                                                        <td>{{i.Nom }}</td>
+                                                        <td>{{i.Prenom}} </td>
+                                                        
+                                                        
+                                                        
+                                                       
+                                                        <td><a href="{% url 'generatepdf' i.id %}"> <i class="fas fa-file-pdf" style="size: 2px;"></i></td>
+                                                        <td><a class="btn btn-sm btn-info" href="{% url 'att' i.id %}">afficher</a></td>
+                                                        
+  
+                                                    </tr>
+                                                        {%endfor%}
+  
+  
+  
+  
+  
+                                                </table>
+                                            </div>
+                                                 
+                                        
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                              </div>
+                           </main>
+
+   
+         
+                       
+    
+     
+                           <script>
+                            $(document).ready(function(){
+                            $('[data-toggle="tooltip"]').tooltip();
+                            var actions = $("table td:last-child").html();
+                            // Append table with add row form on add new button click
+                                $(".add-new").click(function(){
+                            $(this).attr("disabled", "disabled");
+                            var index = $("table tbody tr:last-child").index();
+                                    var row = '<tr>' +
+                                        '<td><input type="text" class="form-control" name="name" id="name"></td>' +
+                                        '<td><input type="text" class="form-control" name="department" id="department"></td>' +
+                                        '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+                            '<td>' + actions + '</td>' +
+                                    '</tr>';
+                                $("table").append(row);
+                            $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+                                    $('[data-toggle="tooltip"]').tooltip();
+                                });
+                            // Add row on add button click
+                            $(document).on("click", ".add", function(){
+                            var empty = false;
+                            var input = $(this).parents("tr").find('input[type="text"]');
+                                    input.each(function(){
+                            if(!$(this).val()){
+                            $(this).addClass("error");
+                            empty = true;
+                            } else{
+                                            $(this).removeClass("error");
+                                        }
+                            });
+                            $(this).parents("tr").find(".error").first().focus();
+                            if(!empty){
+                            input.each(function(){
+                            $(this).parent("td").html($(this).val());
+                            });
+                            $(this).parents("tr").find(".add, .edit").toggle();
+                            $(".add-new").removeAttr("disabled");
+                            }
+                                });
+                            // Edit row on edit button click
+                            $(document).on("click", ".edit", function(){
+                                    $(this).parents("tr").find("td:not(:last-child)").each(function(){
+                            $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+                            });
+                            $(this).parents("tr").find(".add, .edit").toggle();
+                            $(".add-new").attr("disabled", "disabled");
+                                });
+                            // Delete row on delete button click
+                            $(document).on("click", ".delete", function(){
+                                    $(this).parents("tr").remove();
+                            $(".add-new").removeAttr("disabled");
+                                });
+                            });
+                            </script>
+                            
+            
+    </body>
+    </html>

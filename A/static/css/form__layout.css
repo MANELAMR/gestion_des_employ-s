@@ -1,0 +1,43 @@
+/* no scrolling.*/
+html, body {
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.container{
+  
+    margin-left:18%;
+    margin-top:3%;
+}
+  /* .form-group{
+     margin-left:3%;
+     margin-right:3%;
+   } */  
+.form-group p{
+   
+    font-weight: bold;
+    color:white;
+}
+.form-group input{
+  float:left;
+  width:100%;
+}
+.form-control{
+    width:50%;
+    margin:10px;
+   
+    
+}
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) { 
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }  
+  
+  

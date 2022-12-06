@@ -1,0 +1,74 @@
+html{
+    margin: 0;
+    padding:0;
+    width:100%;
+    height: 100vh;
+
+}
+body{
+    margin: 0;
+    padding:0;
+    width:100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/static/image/index_img.jpg) no-repeat;
+    background-size: cover;
+    display: table;
+  
+   
+}
+
+
+.parent__box{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-70%);
+}
+
+
+
+
+
+.login__info h1{
+  float:left;
+  font-size:60px;
+  border-bottom:6px solid #393e46;
+  margin-bottom:30px;
+  padding: 13px 0;
+  color:white;
+  
+}
+login__info p{
+    float:left;
+  font-size:40px;
+  border-bottom:8px solid #393e46;
+  margin-bottom:50px;
+  padding: 13px 0;
+  
+}
+
+.text__box{
+    width:100%;
+    overflow:hidden;
+    font-size:20px;
+    padding:8px 0;
+    margin:8px 0;
+    border-bottom:3px solid #393e46;
+}
+input[type="email"],[type="password"]
+{
+    background: transparent;
+    border: none;
+    color:cornsilk;
+}
+.sing__up p{
+    color:white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+
+

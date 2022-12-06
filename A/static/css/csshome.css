@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;500;600&diplay=swap');
+:root {
+    --color-main :#1a202e ;
+}
+* {
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar {
+    width: 280px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 0rem 1.5rem ;
+    background: var(--color-main);
+    color: #fff;
+}
+.sidebar-brand {
+    height: 70px;
+}
+.brand-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-icons span{
+    font-size: 1.5rem;
+    margin-left: .5rem;
+
+}
+.sidebar-user {
+    margin: 0rem 0rem 1rem 0rem;
+    text-align: center;
+}
+.sidebar-user img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #efefef;
+
+}
+.sidebar-user h3 {
+    font-size: 1rem ;
+}
+
+.sidebar-user span {
+    font-size: .80rem ;
+}
+.sidebar-menu{
+    margin-top: 3rem;
+}
+
+.menu-head {
+    text-transform: uppercase;
+    color: #8da2fb;
+    font-size: .75rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+.sidebar-menu ul{
+    margin-bottom: 1.5rem;
+
+}
+.sidebar-menu li {
+    margin-bottom: .8rem;
+    
+}
+.sidebar-menu li a{
+    color: #efefef;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.sidebar-menu li a span{
+    font-size: 1rem ;
+    display: inline-block;
+    margin-right: .8rem;
+}
+
+
+ .main-content{
+     margin-left: 280px;
+     min-height: 100vh;
+     background: var(--bg-body);
+     padding: .5rem 1rem;
+ }
+ main{
+    
+     padding: 1.5rem ;
+     background: #f1f5f8;
+     min-height: calc(100vh - 70px);
+ }
+.header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-main);
+    padding: 0rem 1rem;
+    position: fixed;
+    left: calc(280px + 1rem);
+    right: 1rem;
+    top: .5rem;
+    border-radius: 3px;
+    left: calc(270px + 1rem);
+    right: 1;
+    top: 0;
+
+
+}
+input , button {
+    outline: none;
+}
+.search{
+    display: flex;
+    width: 300px;
+    border-radius: 20px;
+    overflow-x: hidden;
+    border: 3px solid #3e454d;
+    align-items: center;
+}
+.search span{
+    font-size: 1.3rem;
+    color: #fff;
+    padding-left: 1rem;
+}
+main{
+    margin-top: -550px;
+}
+.search input {
+    flex : 1;
+    height: 43px;
+    border: none;
+    background: transparent; 
+    padding: 1rem;
+    color: #fff;
+}
+.menu_toggle label {
+    height: 60px;
+    width: 60px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+.menu_toggle label:hover{
+    background: #efefef;
+    
+}
+.header-icons span{
+    display: inline-block;
+    margin-left: .7rem;
+    font-size: 1.4rem;
+}
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.header-actions button{
+    outline: none;
+    color: #fff;
+    background: #5850ec;
+    border: none;
+    padding:  .6rem 1rem;
+    margin-left: 1rem ;
+    border-radius: 3px;
+    font-weight: 600;
+
+}
+.header-actions button span{
+    font-size: 1.2rem;
+    margin-right: .6rem ;
+
+}
+.cards{
+margin-left: 20%;
+height: 100%;
+ 
+}
+.head-icons span{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: #fff;
+}
+.card-icon{
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.card-icon span{
+    height: 55px;
+    width: 55px;
+    color: var(--color-main);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.card-info{
+    text-align: center;
+    margin-top: .6rem;
+}
+.card-info small{
+    display: inline-block;
+    color: black
+  
+}
+.chart-grid{
+    display: grid;
+    grid-template-columns: 64% auto;
+    margin-top: 3rem;
+    grid-gap: 2rem; 
+}
+.chart-follow, .chart-sales{
+    background: var(--bg);
+    padding: 1rem;
+}
+.card-info h2{
+    font-size: 3rem; 
+    color: rgb(2, 0, 0);
+
+}
+.card {
+    background: var(--bg);
+    padding: 2rem 1rem;
+    height: 200px;
+}
+.page-header div{
+
+    margin-left: 20%;
+}
+.las la-file-export{
+    margin-top: 0%;
+}
+.card-head{
+    margin-top: 6%;
+}
+.cards2{
+    margin-left: 20%;
+
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 4rem ;
+}
+
+
+
+.body {
+    color: #404E67;
+    background: #F5F7FA;
+    font-family: 'Open Sans', sans-serif;
+    width: 1000px ;
+    
+}
+.table-wrapper {
+    width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+}
+.table-title h2 {
+    margin: 6px 0 0;
+    font-size: 22px;
+}
+.table-title .add-new {
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
+}
+.table-title .add-new i {
+    margin-right: 4px;
+}
+table.table {
+    table-layout: fixed;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table th:last-child {
+    width: 100px;
+}
+table.table td a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+}    
+table.table td a.add {
+    color: #27C46B;
+}
+table.table td a.edit {
+    color: #FFC107;
+}
+table.table td a.delete {
+    color: #E34724;
+}
+table.table td i {
+    font-size: 19px;
+}
+table.table td a.add i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+}    
+table.table .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+table.table .form-control.error {
+    border-color: #f50000;
+}
+table.table td .add {
+    display: none;
+}

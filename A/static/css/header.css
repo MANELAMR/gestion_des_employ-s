@@ -1,0 +1,13 @@
+.header{
+ 
+    min-height: 10%;
+   
+}
+.header__logo{
+    object-fit: contain;
+    width:10%;
+}
+.sig__sign a:hover{
+    color:rgb(114, 155, 68);
+
+}
