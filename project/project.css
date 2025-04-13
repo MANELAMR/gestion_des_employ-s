@@ -1,0 +1,94 @@
+body{min-height: 90vh;
+	background-image: url("imag.JPG");
+    background-repeat: no-repeat;
+ 
+    background-size: cover;
+     
+
+}
+div{
+	margin-top: 100px ;
+	margin-left: 100px ;
+	float: left; 
+	 
+}
+p{text-align: center; 
+	color: white ;
+	font-size: 50px ; 
+}
+.MA{
+	margin-top:20PX;
+	width: 400px; 
+	height: 400px ; 
+
+	margin-left: 450PX; 
+}
+.A{ margin-left: 20px;
+margin-top: 1px;
+margin-bottom:  70px ;  
+	font-size: 15px;
+	color:hsla(0, 3%, 57%, 1); 
+}
+.sub {
+	background: #D27171;
+border-radius: 13px;
+position: absolute;
+width: 150px;
+height: 30px;
+margin-left: 100px ; 
+
+
+
+}
+.pas{background-color: #c5baba;
+border: 1px solid brown ;
+box-sizing: border-box;
+border-radius: 6px;
+padding: 0 15px ; 
+font-size: 17px ; 
+margin-bottom: 15px;
+width: 300px;
+height: 30px;
+margin-left: 15px;
+}
+
+
+.email{background-color: #c5baba;
+border: 1px solid brown ;
+box-sizing: border-box;
+border-radius: 6px;
+padding: 0 15px ; 
+font-size: 17px ; 
+margin-bottom: 15px; 
+margin-left: 15px;  
+
+
+width: 300px;
+height: 30px;
+}
+
+a{
+	color: #D27171; 
+	font-size : 16px
+}
+
+legend {
+	font-size: 40px; 
+}
+fieldset{width: 300px; 
+	height: 400px ;
+	box-sizing: border-box;
+border-radius: 24px;
+
+
+
+}
+td{width: 400px; 
+	margin-bottom: 40px ; 
+	
+}
+table {width: 400px} 
+
+.td{
+margin-left: 15px; 
+}
